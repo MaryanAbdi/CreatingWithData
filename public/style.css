@@ -1,0 +1,95 @@
+
+.content {
+    max-width: 1100px;
+    margin: auto;
+    padding-top: 0.01px;
+     align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* I did this to center the elements on the page so it would fit more inline with the school concept */
+  }
+h1,h3,p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    color:darkslategray;
+    /* I did this to make the font look like a blue pen had written it while still being clear and legible  */
+}
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    color:darkslategray;
+    text-align: left;
+    /* I didn't want to center everything as it may look strange so i moved the average temp to the left as it is just an additional element */
+}
+.bg1{
+    /* When seeing the charts from Chart.js, the reminded me of the ones we would draw in GCSE so i found a css background that looked like a sheet of lined paper */
+/* found at https://leaverou.github.io/css3patterns/# */
+    background-color: #fff;
+background-image:
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
+}
+.slidecontainer {
+    width: 100%; /* the width of the outside container the the slider is in*/
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* this override default CSS styles */
+    appearance: none;
+    width: 20%; /* this the the width of the slider */
+    height: 10px; /* the height of the slider */
+    background: navy; /* background colour, i wanted it to look like pen*/
+    outline: none; /* Removes the outline */
+    opacity: 0.7; /* Set transparency so when the mouse hovers over it looks opach */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown colour on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* the width of slider handle */
+    height: 15px; /* the height of slider handle  */
+    background: rgb(0, 0, 0); /* black background */
+    cursor: pointer; /* Cursor on hover */
+    outline: black;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* the width of slider handle */
+    height: 25px; /* the height of slider handle  */
+    cursor: pointer; /* Cursor on hover */
+  }
+canvas,#canvas{
+    background-color: rgb(245, 248, 252);
+}
+#submit {
+	box-shadow:inset 0px 39px 0px -24px #e67a73;
+	background-color:#e4685d;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #b23e35;
+    /* button css found at https://www.bestcssbuttongenerator.com/#/5 */
+}
+#submit:hover {
+    background-color:#eb675e;
+    /* the colour that appear when the button is hovered over by the cursor */
+}
+#submit:active {
+	position:relative;
+	top:1px;
+}
