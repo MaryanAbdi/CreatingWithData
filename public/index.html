@@ -49,7 +49,7 @@
 					getWeather();//calling the weather API function
 
 					async function getWeather() {
-						url = 'http://api.openweathermap.org/data/2.5/weather?lat=51.4981888&lon=-2.5378816&units=metric&appid=79a04cca2d50f827f2fb605412c810bc'
+						url = new URL('https://api.openweathermap.org/data/2.5/weather?lat=51.4981888&lon=-2.5378816&units=metric&appid=79a04cca2d50f827f2fb605412c810bc');
 						const response = await fetch(url);
 						let weatherData = await response.json();
 						// console.log("WD",weatherData);
@@ -66,7 +66,7 @@
 					const buttonSubmit = document.getElementById('submit');//takes the 
 					buttonSubmit.addEventListener('click', async event => {
 						const Bus = document.getElementById('Bus').value;//makes into the variable Bus into a readable value that can be charted and added to the database
- 
+
 						const data = { Bus, weather };//this makes the variable data into an array containing the bus and weather data 
 						const options = {
 							method: 'POST',
@@ -92,7 +92,9 @@
 						let yVals = [];//the y axis data for the temprature section
 						let yVals2 = [];//the y axis data for the bus section
 						for (let i = 0; i < data.length; i++) {
-							xVals[i] = new Date(data[i].timestamp).toLocaleString();
+
+							let myTime = new Date(data[i].timestamp)
+							xVals[i] = myTime.getDate() + "/" + (myTime.getMonth() + 1);
 							yVals[i] = data[i].weather;
 							yVals2[i] = data[i].Bus;
 						}
@@ -141,11 +143,6 @@
 							}
 						});
 					};
-
-
-
-
-
 				</script>
 	</div>
 </body>
