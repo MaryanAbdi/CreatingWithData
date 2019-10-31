@@ -125,14 +125,28 @@
 							options: {
 								scales: {
 									yAxes: [{
+										scaleLabel: {
+											display: true,
+											labelString: 'Temprature(°C)'
+										},
 										id: 'A',
 										type: 'linear',
 										position: 'left',
 									}, {
+										scaleLabel: {
+											display: true,
+											labelString: 'Number Of Times Travelled on Bus'
+										},
 										id: 'B',
 										type: 'linear',
 										position: 'right',
-									}]
+									}],
+               								 xAxes: [{
+										scaleLabel: {
+											display: true,
+											labelString: 'Date'
+										},
+									}],
 								},
 								legend: {
 									labels: {
