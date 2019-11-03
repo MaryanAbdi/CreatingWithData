@@ -21,6 +21,7 @@
 			<h1>The Correlation Between The Average Temperature and The Amount Of Times I Took The Bus</h1>
 			<!-- This is the document Title -->
 		</div>
+<!--   the data that will be submitted from the OpenWeather API enclosed in the span part below   -->
 		<h2>Average Temperature: <span id="Temp"></span>&deg; <br></h2>
 		<!-- Ths tell the user from the offset what data  -->
 
@@ -93,32 +94,32 @@
 						let yVals2 = [];//the y axis data for the bus section
 						for (let i = 0; i < data.length; i++) {
 
-							let myTime = new Date(data[i].timestamp)
-							xVals[i] = myTime.getDate() + "/" + (myTime.getMonth() + 1);
-							yVals[i] = data[i].weather;
-							yVals2[i] = data[i].Bus;
+							let myTime = new Date(data[i].timestamp)//this is where i added the time data for the xaxis so it wouldn't be a large piece of data
+							xVals[i] = myTime.getDate() + "/" + (myTime.getMonth() + 1);//this is where i extract data from the time stamp for the  x axis
+							yVals[i] = data[i].weather;//this is my weather data for y axis
+							yVals2[i] = data[i].Bus;//this is my submitted data for the right y axis
 						}
 						const ctx = document.getElementById('chart').getContext('2d');
-						const myChart = new Chart(ctx, {
-							type: 'line',
+						const myChart = new Chart(ctx, {//the actual chart variable
+							type: 'line',//i chose a line graph as i am collecting data over time so it'll be clearer 
 							data: {
-								labels: xVals,
+								labels: xVals,//iserting the x axis 
 								datasets: [{
-									label: 'Temprature over time(°C)',
-									yAxisID: 'A',
-									data: yVals,
-									fill: true,
-									backgroundColor: 'rgba(190, 99, 132, 0.3)',
-									borderColor: 'rgba(200, 99, 132, 1)',
+									label: 'Temperature over time(°C)',//this is the weather data section and it's title
+									yAxisID: 'A',//this is it's assigned axis
+									data: yVals,//the data used
+									fill: true,//this fills the area underneath with color
+									backgroundColor: 'rgba(190, 99, 132, 0.3)',//this is the filler color
+									borderColor: 'rgba(200, 99, 132, 1)',//this is the line color
 									borderWidth: 0,
 								},
 								{
-									label: 'How Many Times I Travelled By Bus',
-									yAxisID: 'B',
-									data: yVals2,
-									fill: true,
-									backgroundColor: 'rgba(63, 63, 191, 0.5)',
-									borderColor: 'rgba(63, 63, 191, 1)',
+									label: 'How Many Times I Travelled By Bus',//this is the title for the bus section
+									yAxisID: 'B',//assigned y axis
+									data: yVals2,//the data used
+									fill: true,//this fills the area underneath with color
+									backgroundColor: 'rgba(63, 63, 191, 0.5)',//this is the filler color
+									borderColor: 'rgba(63, 63, 191, 1)',//this is the line color
 									borderWidth: 0,
 								}]
 							},
@@ -126,22 +127,26 @@
 								scales: {
 									yAxes: [{
 										scaleLabel: {
-											display: true,
-											labelString: 'Temprature(°C)'
+											display: true,//so it displays. False wouldn't show it.
+											labelString: 'Temperature(°C)'//left y axis label
 										},
-										id: 'A',
+										id: 'A',//axis id so i can assign it.
 										type: 'linear',
-										position: 'left',
-									}, {
+										position: 'left',//which axis it is and which side
+									                ticks: {
+												    callback: function(value, index, values) {
+													return value + '°';//this adds a degree symbol as i am using temprature
+												    }
+												}}, {
 										scaleLabel: {
-											display: true,
+											display: true,//so it displays. False wouldn't show it.
 											labelString: 'Number Of Times Travelled on Bus'
 										},
-										id: 'B',
+										id: 'B',//axis id so i can assign it.
 										type: 'linear',
-										position: 'right',
+										position: 'right',//which axis it is and which side
 									}],
-               								 xAxes: [{
+              								  xAxes: [{
 										scaleLabel: {
 											display: true,
 											labelString: 'Date'
