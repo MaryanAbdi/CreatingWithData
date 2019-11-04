@@ -131,7 +131,7 @@
 											labelString: 'Temperature(°C)'//left y axis label
 										},
 										id: 'A',//axis id so i can assign it.
-										type: 'linear',
+										type: 'linear',//linear = along the straight axis line
 										position: 'left',//which axis it is and which side
 									                ticks: {
 												    callback: function(value, index, values) {
@@ -143,20 +143,20 @@
 											labelString: 'Number Of Times Travelled on Bus'
 										},
 										id: 'B',//axis id so i can assign it.
-										type: 'linear',
+										type: 'linear',//linear = along the straight axis line
 										position: 'right',//which axis it is and which side
 									}],
               								  xAxes: [{
-										scaleLabel: {
-											display: true,
-											labelString: 'Date'
+										scaleLabel: {//x axis label
+											display: true,//true= it will display
+											labelString: 'Date'//what the label says
 										},
 									}],
 								},
 								legend: {
 									labels: {
-										fontColor: 'rgba(0,0,0,1)',
-										fontFamily: 'Trebuchet MS',
+										fontColor: 'rgba(0,0,0,1)',//label color
+										fontFamily: 'Trebuchet MS',//label fonts
 									}
 								},
 							}
