@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* I did this to center the elements on the page so it would fit more inline with the school concept */
+    /* I did this to center the elements on the page so it would fit more inline with the css background, blending it in more with the school concept */
   }
 h1,h3,p{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
