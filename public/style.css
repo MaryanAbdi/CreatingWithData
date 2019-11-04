@@ -33,7 +33,7 @@ background-size: 100% 1.2em;
     width: 100%; /* the width of the outside container the the slider is in*/
   }
   
-  /* The slider itself */
+  /* The slider itself found at https://www.w3schools.com/howto/howto_js_rangeslider.asp */
   .slider {
     -webkit-appearance: none;  /* this override default CSS styles */
     appearance: none;
